@@ -8,9 +8,12 @@ import axios from "axios";
 import { useContext } from "react";
 import { authContext } from "../Context/AuthContext.jsx";
 
+import { userDataContext } from "../Context/UserContext.jsx";
+
 function Login() {
   let [show, setShow] = useState(false);
   let {serverUrl} = useContext(authContext)
+  let { userData, setUserData } = useContext(userDataContext)
   let [email, setEmail] = useState("")
   let [password, setPassword] = useState("")
   let navigate = useNavigate();
@@ -22,6 +25,8 @@ function Login() {
           email,
           password
         },{withCredentials:true})
+        setUserData(result.data)
+        navigate("/")
         console.log(result)
     }catch(err){
       console.log(err)

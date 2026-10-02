@@ -7,11 +7,13 @@ import { MdRemoveRedEye } from "react-icons/md";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import { userDataContext } from "../Context/UserContext.jsx";
 
 function SignUp() {
   let [show, setShow] = useState(false);
   let navigate = useNavigate();
   let {serverUrl} = useContext(authContext)
+  let { userData, setUserData } = useContext(userDataContext)
   let [name, setName] = useState("")
   let [email, setEmail] = useState("")
   let [password, setPassword] = useState("")
@@ -23,6 +25,8 @@ function SignUp() {
           email,
           password
         },{withCredentials:true})
+        setUserData(result.data)
+        navigate("/")
         console.log(result)
     }catch(err){
       console.log(err)
