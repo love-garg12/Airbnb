@@ -57,13 +57,13 @@ function Nav() {
           <button className="px-[20px] py-[10px] flex items-center justify-center gap-3 border-[1px] border-[#d3d1d1] rounded-full hover:bg-[#cecccc] hover:text-white hover:shadow-lg"
           onClick={()=>setShowpopup(prev=>!prev)}>
             <GiHamburgerMenu className="w-[20px] h-[20px]"/>
-            {userData == null && <CgProfile className="w-[22px] h-[22px]"/>}
+            {userData == null && <CgProfile className="w-[20px] h-[20px]"/>}
             {userData != null && <span className="w-[30px] h-[30px] bg-[#080808] text-[white] rounded-full flex items-center justify-center">{userData?.name?.charAt(0)}</span>}
           </button>
           {showpopup && <div className='w-[190px] h-[220px] absolute bg-slate-50 top-[110%] right-[10%] border-[1px] border-[#b8b3b4] z-10 rounded-lg'>
               <ul className="w-[100%] h-[100%] text-[15px] flex items-start justify-around flex-col py-[8px]">
                 <li className="w-[100%] px-[10px] py-[9px] hover:bg-slate-300 cursor-pointer" onClick={()=>{navigate('/login')}}>Login</li>
-                <li className="w-[100%] px-[10px] py-[9px] hover:bg-slate-300 cursor-pointer border-b-2">
+                <li className="w-[100%] px-[10px] py-[9px] hover:bg-slate-300 cursor-pointer border-b-2" onClick={handlerLogout}>
                   Logout
                 </li>
                 <li className="w-[100%] px-[10px] py-[9px] hover:bg-slate-300 cursor-pointer">List your Home</li>
