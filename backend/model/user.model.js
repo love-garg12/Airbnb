@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-import { Model } from "mongoose";
-
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -15,10 +13,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    listing:{
+    listings:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Listing",
-    },
+    }],
     booking:{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Booking",

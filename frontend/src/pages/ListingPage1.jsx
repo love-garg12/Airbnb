@@ -6,15 +6,15 @@ function ListingPage1() {
     let navigate = useNavigate();
   return (
     <div className='w-[100%] h-[100vh] bg-white flex items-center justify-center relative'>
-       <form action="" className="flex flex-col items-center justify-start w-[90%] h-[600px] px-2 mt-5
+       <form action="" className="flex flex-col items-center justify-start w-[90%] h-[600px] px-[50px] py-[50px]
                     rounded-md  overflow-auto gap-2">
             <div className="flex items-center justify-center">
                       <FaArrowLeft
-                        className="absolute left-[20px] top-[35px] text-[45px] cursor-pointer  bg-[red] rounded-full p-2"
+                        className="absolute left-[20px] top-[35px] text-[35px] cursor-pointer  bg-[red] rounded-full p-2"
                         onClick={() => navigate("/")}
                       />
                     </div>
-                    <div className="w-[180px] h-[40px] text-[17px] bg-[#f14242] text-white flex items-center justify-center rounded-[30px] cursor-pointer absolute top-[15px] right-[10px] shadow-lg">
+                    <div className="w-[180px] h-[40px] text-[17px] bg-[#f14242] text-white flex items-center justify-center rounded-[30px] cursor-pointer absolute top-[30px] right-[10px] shadow-lg">
                         setUp Your Home
                     </div>
                     <div className="w-[90%] flex items-start justify-start flex-col ">
@@ -97,6 +97,9 @@ function ListingPage1() {
             className="h-[40px] w-[90%] border-[2px] border-[#326d4b] rounded-lg px-3 text-[18px]"
             required/>
         </div>
+        <button className="px-[100px] py-[10px] bg-red-700 mt-5 text-white rounded-lg text-[18px]">
+          Next
+        </button>
 
        </form>
     </div>

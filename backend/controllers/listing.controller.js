@@ -1,11 +1,12 @@
-import  uploadOnCloudinary  from "../utils/cloudinary.js";
-import Listing from "../models/listing.model.js";
-import User from "../models/user.model.js";
+import uploadOnCloudinary from "../config/cloudinary.js";
+import Listing from "../model/listing.model.js";
+import User from "../model/user.model.js";
 
 export const addListing = async (req, res) => {
     try{
           let host =req.userId;
-          let {title,description,rent,city,landMark,category} = req.body;
+          let {title,description,rent,city,category} = req.body;
+          let landMark = req.body.landMark ?? req.body.landmark;
           let image1=await uploadOnCloudinary(req.files.image1[0].path)
           let image2=await uploadOnCloudinary(req.files.image2[0].path)
           let image3=await uploadOnCloudinary(req.files.image3[0].path)

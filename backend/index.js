@@ -9,7 +9,7 @@ import listingRouter from './routes/listing.route.js';
 
 dotenv.config();
 connectDB();
-let port = process.env.PORT || 5000;
+let port = process.env.PORT || 8000;
 let app = express();
 app.use(express.json());
 app.use(cookieParser());
